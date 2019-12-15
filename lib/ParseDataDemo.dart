@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 
 class Data {
   String text;
   int counter;
-  String dateTime;
-  Data({this.text, this.counter, this.dateTime});
+  Data({this.text, this.counter});
 }
 
-class ConstructorPage extends StatefulWidget {
+class ParseDataDemo extends StatefulWidget {
   @override
-  ConstructorPageState createState() {
-    return new ConstructorPageState();
+  ParseDataPage createState() {
+    return new ParseDataPage();
   }
 }
 
-class ConstructorPageState extends State<ConstructorPage> {
+class ParseDataPage extends State<ParseDataDemo> {
   final data = Data(
       counter: 1,
-      dateTime: DateFormat("dd/MM/yyyy - HH:mm:ss:S").format(DateTime.now()),
       text: "Lorem ipsum");
 
   final textController = TextEditingController();
@@ -50,7 +47,6 @@ class ConstructorPageState extends State<ConstructorPage> {
                     style: TextStyle(fontWeight: FontWeight.w700))),
             Text('Text: ${data.text}'),
             Text('Counter: ${data.counter}'),
-            Text('Date: ${data.dateTime}'),
             Container(height: 12.0),
             TextField(
               controller: textController,
@@ -70,16 +66,6 @@ class ConstructorPageState extends State<ConstructorPage> {
               onPressed: () {
                 setState(() {
                   data.counter += 1;
-                });
-              },
-            ),
-            Container(height: 12.0),
-            RaisedButton(
-              child: Text('Get datetime'),
-              onPressed: () {
-                setState(() {
-                  data.dateTime = DateFormat("dd/MM/yyyy - HH:mm:ss:S")
-                      .format(DateTime.now());
                 });
               },
             ),
@@ -127,7 +113,6 @@ class SecondPage extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.w700))),
             Text('Text: ${data.text}'),
             Text('Counter: ${data.counter}'),
-            Text('Date: ${data.dateTime}'),
           ],
         ),
       ),

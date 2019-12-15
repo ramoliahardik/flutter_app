@@ -17,6 +17,7 @@ import 'package:flutter_app/MapDemo.dart';
 import 'package:flutter_app/CameraDemo.dart';
 import 'package:flutter_app/CupertinoDemo.dart';
 import 'package:flutter_app/SQLiteDemo.dart';
+import 'package:flutter_app/ParseDataDemo.dart';
 
 Future<void> main() async {
   cameras = await availableCameras();
@@ -154,7 +155,7 @@ class MyApp extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => SQLiteDemo()
+                        builder: (context) => ParseDataDemo()
                     )
                 );
               }
